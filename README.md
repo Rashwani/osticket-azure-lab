@@ -1,4 +1,4 @@
-[README (1).md](https://github.com/user-attachments/files/25827299/README.1.md)
+[README.md](https://github.com/user-attachments/files/25827299/README.1.md)
 # osTicket Help Desk Deployment on Microsoft Azure
 
 ![osTicket](https://img.shields.io/badge/osTicket-v1.18.1-blue) ![Azure](https://img.shields.io/badge/Microsoft-Azure-0089D6?logo=microsoft-azure) ![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04_LTS-E95420?logo=ubuntu) ![LAMP](https://img.shields.io/badge/Stack-LAMP-green)
