@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/25827245/README.md)
+[README.md](https://github.com/user-attachments/files/25827262/README.md)
 # 🎫 osTicket Help Desk Deployment on Microsoft Azure
 
 ![osTicket](https://img.shields.io/badge/osTicket-v1.18.1-blue) ![Azure](https://img.shields.io/badge/Microsoft-Azure-0089D6?logo=microsoft-azure) ![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04_LTS-E95420?logo=ubuntu) ![LAMP](https://img.shields.io/badge/Stack-LAMP-green)
@@ -51,7 +51,6 @@ MySQL Database
 
 Provisioned a `Standard_B1s` VM (1 vCPU, 1 GB RAM) running Ubuntu 22.04 LTS — free tier eligible.
 
-![VM Architecture Overview](screenshots_jpg/page1.jpg)
 
 ---
 
@@ -59,7 +58,6 @@ Provisioned a `Standard_B1s` VM (1 vCPU, 1 GB RAM) running Ubuntu 22.04 LTS — 
 
 Configured inbound rules to allow SSH (port 22) and HTTP (port 80).
 
-![NSG Rules](screenshots_jpg/page2.jpg)
 
 ---
 
@@ -69,7 +67,6 @@ Configured inbound rules to allow SSH (port 22) and HTTP (port 80).
 
 Both SSH and HTTP inbound rules confirmed active. Began LAMP stack installation.
 
-![LAMP Install](screenshots_jpg/page3.jpg)
 
 ---
 
@@ -77,7 +74,6 @@ Both SSH and HTTP inbound rules confirmed active. Began LAMP stack installation.
 
 Apache verified running by loading the VM's public IP in a browser. MySQL and PHP extensions installed.
 
-![Apache Running](screenshots_jpg/page4.jpg)
 
 ---
 
@@ -93,7 +89,6 @@ FLUSH PRIVILEGES;
 EXIT;
 ```
 
-![MySQL Setup](screenshots_jpg/page5.jpg)
 
 ---
 
@@ -103,7 +98,6 @@ EXIT;
 
 Navigated to `http://YOUR_PUBLIC_IP/osticket/setup/` and completed the installation wizard with system settings, admin account, and database credentials.
 
-![Web Installer](screenshots_jpg/page6.jpg)
 
 ---
 
@@ -116,7 +110,6 @@ sudo rm -rf /var/www/html/osticket/setup
 sudo chmod 0644 /var/www/html/osticket/include/ost-config.php
 ```
 
-![Installation Success](screenshots_jpg/page7.jpg)
 
 ---
 
@@ -133,7 +126,6 @@ Navigated to **Admin Panel → Agents → Departments** and created four routing
 | Security | Security incidents, access control, account issues |
 | Hardware | Physical device issues, replacements, peripherals |
 
-![Departments](screenshots_jpg/page8.jpg)
 
 ---
 
@@ -147,7 +139,6 @@ Navigated to **Admin Panel → Manage → SLA Plans** and created three SLA tier
 | Normal Priority SLA | 24 hours | 24/7 |
 | Low Priority SLA | 72 hours | 24/7 |
 
-![SLA Plans](screenshots_jpg/page9.jpg)
 
 ---
 
@@ -155,9 +146,7 @@ Navigated to **Admin Panel → Manage → SLA Plans** and created three SLA tier
 
 Created 5 Help Topics (Password Reset, Network/Wi-Fi Issues, VPN/Remote Access, Hardware Request, Account Lockout) and provisioned two agent accounts: **Jane Smith** (Tier 1) and **John Doe** (Senior/Full Access).
 
-![Help Topics](screenshots_jpg/page10.jpg)
 
-![Agent Accounts](screenshots_jpg/page11.jpg)
 
 ---
 
@@ -169,11 +158,9 @@ Created 5 Help Topics (Password Reset, Network/Wi-Fi Issues, VPN/Remote Access, 
 
 A user submitted a ticket via the client portal reporting VPN error 800 after a Windows update.
 
-![VPN Ticket Created](screenshots_jpg/page12.jpg)
 
 Jane Smith (Tier 1) opened the ticket, set High priority, added an internal investigation note, then escalated to John Doe. John resolved by rolling back Windows update `KB5034441` via remote session.
 
-![VPN Ticket Resolved](screenshots_jpg/page13.jpg)
 
 ---
 
@@ -183,9 +170,7 @@ Jane Smith (Tier 1) opened the ticket, set High priority, added an internal inve
 
 User locked out after repeated failed login attempts before a meeting. Agent verified identity via secondary email, unlocked the AD account, and advised on password manager usage.
 
-![Account Lockout Ticket](screenshots_jpg/page14.jpg)
 
-![Account Lockout Resolved](screenshots_jpg/page15.jpg)
 
 ---
 
@@ -195,7 +180,6 @@ User locked out after repeated failed login attempts before a meeting. Agent ver
 
 Outlook showed "Disconnected" status. Agent re-entered Exchange credentials, checked server status, and cleared the Outlook cache (`.ost` file).
 
-![Email Not Syncing Resolved](screenshots_jpg/page16.jpg)
 
 ---
 
@@ -212,17 +196,4 @@ Outlook showed "Disconnected" status. Agent re-entered Exchange credentials, che
 
 This lab mirrors how enterprise IT support teams operate. A centralized ticketing system with SLA enforcement, tiered agent roles, and department-based routing reduces resolution time, creates accountability, and produces an auditable trail of every support interaction. Deploying this on Azure — rather than locally — demonstrates cloud infrastructure skills and an understanding of network security groups, public IPs, and cloud VM management that translate directly to real workplace environments.
 
----
 
-## 🚀 Next Steps / Planned Improvements
-
-- [ ] Add HTTPS with SSL/TLS certificate via Let's Encrypt (`certbot`)
-- [ ] Configure email piping for automatic ticket creation from inbound emails
-- [ ] Set up automated ticket assignment rules based on keywords
-- [ ] Integrate with an Active Directory home lab for user authentication
-- [ ] Write a Bash script to auto-provision osTicket agents
-- [ ] Add Azure Monitor alerts for CPU/memory spikes on the VM
-
----
-
-*Lab completed March 2026 | Built for IT portfolio documentation*
