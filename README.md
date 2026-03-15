@@ -47,6 +47,7 @@ Provisioned a `Standard_B1s` VM (1 vCPU, 1 GB RAM) running Ubuntu 22.04 LTS, fre
 
 Configured inbound rules to allow SSH (port 22) and HTTP (port 80).
 
+
 ## Phase 2 - LAMP Stack Installation
 
 ### NSG Confirmed + LAMP Install Started
